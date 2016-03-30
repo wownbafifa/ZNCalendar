@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReturnDateViewController">
+            <connections>
+                <outlet property="bottomView" destination="aE8-hW-E0l" id="g3N-gr-ivT"/>
+                <outlet property="bottomViewConstraints" destination="CDX-XT-FkJ" id="hIc-ey-R1b"/>
+                <outlet property="endDateBtn" destination="dXB-r3-8Pq" id="mvr-fB-2WQ"/>
+                <outlet property="firstDateBtn" destination="GOs-jT-CJ1" id="Iuv-UK-PKe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXB-r3-8Pq">
+                    <rect key="frame" x="160" y="64" width="160" height="34"/>
+                    <state key="normal" title="返程日期">
+                        <color key="titleColor" red="0.0039215686269999999" green="0.62352941179999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="didClickEndDateBtn:" destination="-1" eventType="touchUpInside" id="Fju-85-RDl"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE8-hW-E0l">
+                    <rect key="frame" x="0.0" y="98" width="160" height="3"/>
+                    <color key="backgroundColor" red="0.0039215686274509803" green="0.62352941176470589" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="YAf-Ny-M67"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOs-jT-CJ1">
+                    <rect key="frame" x="0.0" y="64" width="160" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="cMH-dS-dnj"/>
+                    </constraints>
+                    <state key="normal" title="去程日期">
+                        <color key="titleColor" red="0.0039215686274509803" green="0.62352941176470589" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="didClickFirstDateBtn:" destination="-1" eventType="touchUpInside" id="wit-lK-Hnx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPk-pr-9pM">
+                    <rect key="frame" x="197" y="314" width="46" height="30"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="GOs-jT-CJ1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="CA7-fU-7iD"/>
+                <constraint firstItem="aE8-hW-E0l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CDX-XT-FkJ"/>
+                <constraint firstItem="GOs-jT-CJ1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MKy-uM-OEY"/>
+                <constraint firstItem="aE8-hW-E0l" firstAttribute="top" secondItem="GOs-jT-CJ1" secondAttribute="bottom" id="MvR-a4-Ht9"/>
+                <constraint firstItem="aE8-hW-E0l" firstAttribute="width" secondItem="GOs-jT-CJ1" secondAttribute="width" id="Nob-ef-7Tw"/>
+                <constraint firstItem="dXB-r3-8Pq" firstAttribute="height" secondItem="GOs-jT-CJ1" secondAttribute="height" id="PBM-gl-NcS"/>
+                <constraint firstItem="dXB-r3-8Pq" firstAttribute="leading" secondItem="GOs-jT-CJ1" secondAttribute="trailing" id="Y9A-Z6-uZd"/>
+                <constraint firstItem="dXB-r3-8Pq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="nCj-CJ-7Mf"/>
+                <constraint firstItem="dXB-r3-8Pq" firstAttribute="width" secondItem="GOs-jT-CJ1" secondAttribute="width" id="rB3-cA-iNg"/>
+                <constraint firstAttribute="trailing" secondItem="dXB-r3-8Pq" secondAttribute="trailing" id="x5a-Zt-OP7"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="204" y="398"/>
+        </view>
+    </objects>
+</document>

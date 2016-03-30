@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rxC-Vc-aBA">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Il2-N7-cn8">
+            <objects>
+                <navigationController id="rxC-Vc-aBA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w0s-UV-lbp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mAh-5e-cc0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yDE-FQ-SzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-824" y="447"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vos-ee-P8q">
+                                <rect key="frame" x="245" y="280" width="111" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="egm-Dn-APh"/>
+                                    <constraint firstAttribute="height" constant="40" id="u5k-QT-CQg"/>
+                                </constraints>
+                                <state key="normal" title="去程日期"/>
+                                <connections>
+                                    <action selector="didClickTripBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wJ-K6-MTF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yht-CJ-K5u">
+                                <rect key="frame" x="245" y="357" width="111" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="LFt-Qw-Pew"/>
+                                    <constraint firstAttribute="height" constant="40" id="nvS-T3-3f4"/>
+                                </constraints>
+                                <state key="normal" title="入住日期"/>
+                                <connections>
+                                    <action selector="didClickCheckInBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9qg-4Z-3pv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wty-Bu-uV0">
+                                <rect key="frame" x="366" y="357" width="111" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="clJ-Rk-H7c"/>
+                                    <constraint firstAttribute="width" constant="111" id="ihh-nF-gRb"/>
+                                </constraints>
+                                <state key="normal" title="离店日期"/>
+                                <connections>
+                                    <action selector="didClickCheckOutBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bkh-cT-hkQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhe-HK-hDa">
+                                <rect key="frame" x="245" y="205" width="111" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="Z61-k5-MIK"/>
+                                    <constraint firstAttribute="height" constant="40" id="emC-hC-aY6"/>
+                                </constraints>
+                                <state key="normal" title="出发日期"/>
+                                <connections>
+                                    <action selector="didClickSingleBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNm-lX-I4C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0Y-if-la5">
+                                <rect key="frame" x="366" y="280" width="111" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="1Xb-hO-eDC"/>
+                                    <constraint firstAttribute="height" constant="40" id="VjT-gm-dzZ"/>
+                                </constraints>
+                                <state key="normal" title="返程日期"/>
+                                <connections>
+                                    <action selector="didClickReturnBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2a-6i-Rco"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="往返机票" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nH0-dk-oT0">
+                                <rect key="frame" x="156" y="282" width="79" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="khp-0R-hTg"/>
+                                    <constraint firstAttribute="width" constant="79" id="psG-NB-qog"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="酒店预订" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejv-Rg-Hoh">
+                                <rect key="frame" x="156" y="359" width="79" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Zk7-dX-jyh"/>
+                                    <constraint firstAttribute="width" constant="79" id="iP5-so-n9y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单程机票" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9g-BP-tQi">
+                                <rect key="frame" x="156" y="207" width="79" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="87b-Hy-PNd"/>
+                                    <constraint firstAttribute="height" constant="36" id="yTB-rD-oA9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vos-ee-P8q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1QO-sb-LjV"/>
+                            <constraint firstItem="R9g-BP-tQi" firstAttribute="centerX" secondItem="nH0-dk-oT0" secondAttribute="centerX" id="2M1-ii-T4t"/>
+                            <constraint firstItem="Yht-CJ-K5u" firstAttribute="centerX" secondItem="Vos-ee-P8q" secondAttribute="centerX" id="3UC-M1-xfq"/>
+                            <constraint firstItem="Vos-ee-P8q" firstAttribute="top" secondItem="zhe-HK-hDa" secondAttribute="bottom" constant="35" id="5wa-04-eG7"/>
+                            <constraint firstItem="d0Y-if-la5" firstAttribute="centerY" secondItem="Vos-ee-P8q" secondAttribute="centerY" id="6cx-ux-O5t"/>
+                            <constraint firstItem="Vos-ee-P8q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I9c-s0-68j"/>
+                            <constraint firstItem="Wty-Bu-uV0" firstAttribute="centerX" secondItem="d0Y-if-la5" secondAttribute="centerX" id="Phh-hu-glw"/>
+                            <constraint firstItem="zhe-HK-hDa" firstAttribute="centerX" secondItem="Vos-ee-P8q" secondAttribute="centerX" id="RZi-Xz-zaW"/>
+                            <constraint firstItem="Vos-ee-P8q" firstAttribute="leading" secondItem="nH0-dk-oT0" secondAttribute="trailing" constant="10" id="Xo6-Op-P6U"/>
+                            <constraint firstItem="ejv-Rg-Hoh" firstAttribute="centerY" secondItem="Yht-CJ-K5u" secondAttribute="centerY" id="acY-Cs-h0w"/>
+                            <constraint firstItem="d0Y-if-la5" firstAttribute="leading" secondItem="Vos-ee-P8q" secondAttribute="trailing" constant="10" id="dpi-7u-dQh"/>
+                            <constraint firstItem="ejv-Rg-Hoh" firstAttribute="centerX" secondItem="nH0-dk-oT0" secondAttribute="centerX" id="e9w-oA-SLo"/>
+                            <constraint firstItem="Wty-Bu-uV0" firstAttribute="centerY" secondItem="Yht-CJ-K5u" secondAttribute="centerY" id="ky5-HQ-EEm"/>
+                            <constraint firstItem="nH0-dk-oT0" firstAttribute="centerY" secondItem="Vos-ee-P8q" secondAttribute="centerY" id="rXB-Zw-W4J"/>
+                            <constraint firstItem="R9g-BP-tQi" firstAttribute="centerY" secondItem="zhe-HK-hDa" secondAttribute="centerY" id="vdq-Iz-PXe"/>
+                            <constraint firstItem="Yht-CJ-K5u" firstAttribute="top" secondItem="Vos-ee-P8q" secondAttribute="bottom" constant="37" id="ygY-jG-gsq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qe0-VM-2pY"/>
+                    <connections>
+                        <outlet property="checkInBtn" destination="Yht-CJ-K5u" id="gjQ-bY-3mK"/>
+                        <outlet property="checkOutBtn" destination="Wty-Bu-uV0" id="Npd-VS-FEZ"/>
+                        <outlet property="endBtn" destination="d0Y-if-la5" id="H6b-c8-vra"/>
+                        <outlet property="firstBtn" destination="Vos-ee-P8q" id="Vig-S8-IUL"/>
+                        <outlet property="singleBtn" destination="zhe-HK-hDa" id="jek-2d-WuO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-115" y="447"/>
+        </scene>
+    </scenes>
+</document>
