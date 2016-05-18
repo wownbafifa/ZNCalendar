@@ -23,20 +23,20 @@
     
     
     //选中时显示的图片
-    imgview = [[UILabel alloc]initWithFrame:CGRectMake(5, 15, self.bounds.size.width-10, self.bounds.size.width-10)];
-    imgview.backgroundColor = COLOR_THEME;
+    imgview = [[UILabel alloc]initWithFrame:CGRectMake(5, 2, self.bounds.size.width-10, self.bounds.size.width-10)];
+    imgview.backgroundColor = kColor(1, 159, 240);
     imgview.layer.cornerRadius = imgview.bounds.size.height/2;
     imgview.clipsToBounds = YES;
     [self addSubview:imgview];
     
     //日期
-    day_lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 15, self.bounds.size.width, self.bounds.size.width-10)];
+    day_lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 8, self.bounds.size.width, 14)];
     day_lab.textAlignment = NSTextAlignmentCenter;
     day_lab.font = [UIFont systemFontOfSize:14];
     [self addSubview:day_lab];
 
     //农历
-    day_title = [[UILabel alloc]initWithFrame:CGRectMake(0, self.bounds.size.height-15, self.bounds.size.width, 13)];
+    day_title = [[UILabel alloc]initWithFrame:CGRectMake(0, 30, self.bounds.size.width, 10)];
     day_title.textColor = [UIColor lightGrayColor];
     day_title.font = [UIFont boldSystemFontOfSize:10];
     day_title.textAlignment = NSTextAlignmentCenter;
@@ -63,7 +63,7 @@
                 day_lab.text = [NSString stringWithFormat:@"%lu",(unsigned long)model.day];
             }
             
-            day_lab.textColor = [UIColor lightGrayColor];
+            day_lab.textColor = kColor(153, 153, 153);
             day_title.text = model.Chinese_calendar;
             imgview.hidden = YES;
             break;
@@ -76,7 +76,7 @@
                 day_lab.textColor = [UIColor orangeColor];
             }else{
                 day_lab.text = [NSString stringWithFormat:@"%lu",(unsigned long)model.day];
-                day_lab.textColor = COLOR_THEME;
+                day_lab.textColor = [UIColor blackColor];
             }
             
             day_title.text = model.Chinese_calendar;
@@ -102,6 +102,7 @@
             [self hidden_NO];
             day_lab.text = [NSString stringWithFormat:@"%lu",(unsigned long)model.day];
             day_lab.textColor = [UIColor whiteColor];
+            day_title.textColor = [UIColor whiteColor];
             day_title.text = model.Chinese_calendar;
             imgview.hidden = NO;
             

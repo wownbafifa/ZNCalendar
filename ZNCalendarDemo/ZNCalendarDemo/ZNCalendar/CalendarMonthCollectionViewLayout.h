@@ -11,5 +11,4 @@
 #import <UIKit/UIKit.h>
 
 @interface CalendarMonthCollectionViewLayout : UICollectionViewFlowLayout
-
 @end

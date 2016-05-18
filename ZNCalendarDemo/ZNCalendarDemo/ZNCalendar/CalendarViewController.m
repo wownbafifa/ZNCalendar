@@ -22,6 +22,8 @@
      NSTimer* timer;//定时器
 }
 
+@property (nonatomic, strong) CalendarMonthCollectionViewLayout *viewLayout;
+
 @end
 
 @implementation CalendarViewController
@@ -44,7 +46,6 @@ static NSString *DayCell = @"DayCell";
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
 }
 
 
@@ -54,14 +55,15 @@ static NSString *DayCell = @"DayCell";
     
     [self setTitle:@"选择日期"];
     
-    CalendarMonthCollectionViewLayout *layout = [[CalendarMonthCollectionViewLayout alloc]init];
+    self.viewLayout = [[CalendarMonthCollectionViewLayout alloc]init];
     
-    CalendarWeakView *weakView = [[CalendarWeakView alloc]initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 20)];
+    CalendarWeakView *weakView = [[CalendarWeakView alloc]initWithFrame:CGRectMake(0, 10, [[UIScreen mainScreen] bounds].size.width, 27)];
     [self.view addSubview:weakView];
     
     //[layout setScrollDirection:UICollectionViewScrollDirectionHorizontal]; //设置横向还
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, 21, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:layout]; //初始化网格视图大小
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x, 35, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:self.viewLayout]; //初始化网格视图大小
+    
     [self.collectionView registerClass:[CalendarDayCell class] forCellWithReuseIdentifier:DayCell];//cell重用设置ID
     [self.collectionView registerClass:[CalendarMonthHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:MonthHeader];
 
@@ -78,7 +80,6 @@ static NSString *DayCell = @"DayCell";
     self.collectionView.backgroundColor = [UIColor whiteColor];
 
     [self.view addSubview:self.collectionView];
-
 }
 
 
@@ -120,7 +121,14 @@ static NSString *DayCell = @"DayCell";
     return cell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake([[UIScreen mainScreen] bounds].size.width/7, 31);
+}
 
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake([[UIScreen mainScreen] bounds].size.width, 42);
+}
 
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
@@ -184,12 +192,12 @@ static NSString *DayCell = @"DayCell";
         }
         [self.collectionView reloadData];
     }
-    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 0.6 * NSEC_PER_SEC);
-    dispatch_after(time, dispatch_get_main_queue(), ^{
-        NSIndexPath *scrollIndex = [NSIndexPath indexPathForItem:indexPath.item inSection:indexPath.section];
-        [self.collectionView scrollToItemAtIndexPath:scrollIndex atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
-        
-    });
+//    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 0.6 * NSEC_PER_SEC);
+//    dispatch_after(time, dispatch_get_main_queue(), ^{
+//        NSIndexPath *scrollIndex = [NSIndexPath indexPathForItem:indexPath.item inSection:indexPath.section];
+//        [self.collectionView scrollToItemAtIndexPath:scrollIndex atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+//        
+//    });
 }
 
 //返回这个UICollectionView是否可以被选择

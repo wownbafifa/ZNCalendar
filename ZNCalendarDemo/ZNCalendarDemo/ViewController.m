@@ -71,12 +71,12 @@
 
 /**
  *  往返机票
-    去程日期按钮点击事件
+ 去程日期按钮点击事件
  *
  *  @param sender button
  */
 - (IBAction)didClickTripBtn:(id)sender {
-    ReturnDateViewController * vc =[[ReturnDateViewController alloc]initWithFirstBtnStr:@"去程日期" andSecondBtnStr:@"返程日期" andButtonDate:nil];
+    ReturnDateViewController * vc =[[ReturnDateViewController alloc]initWithFirstBtnStr:@"去程日期" andSecondBtnStr:@"返程日期" andButtonDate:nil andButtonType:Plane];
     [vc setTitle:@"选择日期"];
     __weak typeof(self) weakself = self;
     
@@ -96,12 +96,12 @@
 
 /**
  *  往返机票
-    返程日期按钮点击事件
+ 返程日期按钮点击事件
  *
  *  @param sender button
  */
 - (IBAction)didClickReturnBtn:(id)sender {
-    ReturnDateViewController * vc =[[ReturnDateViewController alloc]initWithFirstBtnStr:@"去程日期" andSecondBtnStr:@"返程日期" andButtonDate:[self.planeDataDic objectForKey:@"firstDate"]];
+    ReturnDateViewController * vc =[[ReturnDateViewController alloc]initWithFirstBtnStr:@"去程日期" andSecondBtnStr:@"返程日期" andButtonDate:[self.planeDataDic objectForKey:@"firstDate"] andButtonType:Plane];
     [vc setTitle:@"选择日期"];
     __weak typeof(self) weakself = self;
     
@@ -123,12 +123,12 @@
 
 /**
  *  酒店预订
-    入住日期按钮点击事件
+ 入住日期按钮点击事件
  *
  *  @param sender button
  */
 - (IBAction)didClickCheckInBtn:(id)sender {
-    ReturnDateViewController * vc =[[ReturnDateViewController alloc]initWithFirstBtnStr:@"入住日期" andSecondBtnStr:@"离店日期" andButtonDate:nil];
+    ReturnDateViewController * vc =[[ReturnDateViewController alloc]initWithFirstBtnStr:@"入住日期" andSecondBtnStr:@"离店日期" andButtonDate:nil andButtonType:Hotel];
     [vc setTitle:@"选择日期"];
     __weak typeof(self) weakself = self;
     
@@ -148,12 +148,12 @@
 
 /**
  *  酒店预订
-    离店日期按钮点击事件
+ 离店日期按钮点击事件
  *
  *  @param sender button
  */
 - (IBAction)didClickCheckOutBtn:(id)sender {
-    ReturnDateViewController * vc =[[ReturnDateViewController alloc]initWithFirstBtnStr:@"入住日期" andSecondBtnStr:@"离店日期" andButtonDate:[self.hotelDataDic objectForKey:@"firstDate"]];
+    ReturnDateViewController * vc =[[ReturnDateViewController alloc]initWithFirstBtnStr:@"入住日期" andSecondBtnStr:@"离店日期" andButtonDate:[self.hotelDataDic objectForKey:@"firstDate"] andButtonType:Hotel];
     [vc setTitle:@"选择日期"];
     __weak typeof(self) weakself = self;
     

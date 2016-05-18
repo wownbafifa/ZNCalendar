@@ -9,8 +9,7 @@
 #import "ReturnDateViewController.h"
 #import "CalendarHomeViewController.h"
 #import "CalendarDayModel.h"
-#define gcWidth [[UIScreen mainScreen] bounds].size.width
-#define gcHeight [[UIScreen mainScreen] bounds].size.height
+
 
 @interface ReturnDateViewController ()<UICollectionViewDelegate>
 
@@ -24,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewConstraints;
 @property (nonatomic,strong) NSMutableDictionary *dataDic;
 @property (nonatomic,strong) CalendarDayModel *model;
+@property (nonatomic,assign) ButtonType buttonType;
 @end
 
 @implementation ReturnDateViewController
@@ -35,12 +35,15 @@
  *
  *  @return ReturnDateViewController
  */
-- (instancetype)initWithFirstBtnStr:(NSString *)firstBtnStr andSecondBtnStr:(NSString *)secondBtnStr andButtonDate:(NSDate *)btnDate{
+- (instancetype)initWithFirstBtnStr:(NSString *)firstBtnStr andSecondBtnStr:(NSString *)secondBtnStr andButtonDate:(NSDate *)btnDate andButtonType:(ButtonType)type{
     if (self = [super init]) {
         self.firstBtnStr = firstBtnStr;
         self.secondBtnStr = secondBtnStr;
         self.isFirstDateSelected = true;
         if (btnDate != nil) {
+//            NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
+//            [dateFormat setDateFormat:@"yyyy-MM-dd"];
+//            NSDate *date = [dateFormat dateFromString:btnString];
             [self.dataDic setObject:btnDate forKey:@"firstDate"];
             self.isFirstDateSelected = false;
         }
@@ -51,6 +54,9 @@
 -(NSMutableDictionary *)dataDic{
     if (!_dataDic) {
         _dataDic = [NSMutableDictionary dictionary];
+//        NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
+//        dateFormat.dateFormat = @"yyyy-MM-dd";
+//        NSString *dateStr = [dateFormat stringFromDate:[NSDate date]];
         [_dataDic setObject:[NSDate date] forKey:@"firstDate"];
         [_dataDic setObject:[NSDate date] forKey:@"endDate"];
     }
@@ -67,10 +73,18 @@
     self.point = CGPointMake(0, 0);
     if (!_chvc) {
         _chvc = [[CalendarHomeViewController alloc]init];
-        if (self.isFirstDateSelected) {
-            [_chvc setAirPlaneToDay:365 ToDateforString:nil];
+        if (self.buttonType == 1) {
+            if (self.isFirstDateSelected) {
+                [_chvc setAirPlaneToDay:365 ToDateforString:nil];
+            }else{
+                [_chvc setAirPlaneToDay:365 ToDateforString:dateStr];
+            }
         }else{
-            [_chvc setAirPlaneToDay:365 ToDateforString:dateStr];
+            if (self.isFirstDateSelected) {
+                [_chvc setHotelToDay:365 ToDateforString:nil];
+            }else{
+                [_chvc setHotelToDay:365 ToDateforString:dateStr];
+            }
         }
     }
     UIView *calendarView = [[UIView alloc]initWithFrame:CGRectMake(0, 100,gcWidth , gcHeight)];
@@ -111,7 +125,11 @@
     }
     self.isFirstDateSelected = true;
     [self updateBottomView:self.isFirstDateSelected andWithAnimation:YES];
-    [self.chvc setAirPlaneToDay:365 ToDateforString:nil];
+    if (self.buttonType == 1) {
+        [self.chvc setAirPlaneToDay:365 ToDateforString:nil];
+    }else{
+        [self.chvc setHotelToDay:365 ToDateforString:nil];
+    }
     NSAttributedString *attrStr0 = [[NSAttributedString alloc] initWithString: [self.firstBtnStr substringWithRange: NSMakeRange(0, self.firstBtnStr.length)] attributes:  @{}];
     [self.firstDateBtn setAttributedTitle:attrStr0 forState:UIControlStateNormal];
 }
@@ -211,7 +229,9 @@
 - (void)changeFirstDateBtn:(NSString *)firstDateStr{
     self.isFirstDateSelected = false;
     self.firstDateBtn.titleLabel.numberOfLines = 2;
-    self.firstDateBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+//    self.firstDateBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+    self.firstDateBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    
     NSMutableAttributedString *attributedStr = [self getAppendAttributedString:[NSString stringWithFormat:@"%@\n",self.firstBtnStr] andDateString:firstDateStr];
     [self.firstDateBtn setAttributedTitle:attributedStr forState:UIControlStateNormal];
 
@@ -225,7 +245,8 @@
 - (void)changeEndDateBtn:(NSString *)firstDateStr{
     self.isFirstDateSelected = true;
     self.endDateBtn.titleLabel.numberOfLines = 2;
-    self.endDateBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+//    self.endDateBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+    self.endDateBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     NSMutableAttributedString *attributedStr = [self getAppendAttributedString:[NSString stringWithFormat:@"%@\n",self.firstBtnStr] andDateString:firstDateStr];
     [self.endDateBtn setAttributedTitle:attributedStr forState:UIControlStateNormal];
 }
@@ -245,7 +266,7 @@
     NSMutableParagraphStyle *paragraph=[[NSMutableParagraphStyle alloc]init];
     paragraph.alignment=NSTextAlignmentCenter;
     NSDictionary *attrTitleDict0 = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:11],NSParagraphStyleAttributeName:paragraph};
-    NSDictionary *attrTitleDict1 = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:13],NSForegroundColorAttributeName: [UIColor blackColor],NSParagraphStyleAttributeName:paragraph};
+    NSDictionary *attrTitleDict1 = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:13],NSForegroundColorAttributeName: kColor(102, 102, 102),NSParagraphStyleAttributeName:paragraph};
     NSAttributedString *attrStr0 = [[NSAttributedString alloc] initWithString: [t0 substringWithRange: NSMakeRange(0, t0.length)] attributes: attrTitleDict0];
     NSAttributedString *attrStr1 = [[NSAttributedString alloc] initWithString: [t1 substringWithRange: NSMakeRange(0, t1.length)] attributes: attrTitleDict1];
     NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithAttributedString: attrStr0];
