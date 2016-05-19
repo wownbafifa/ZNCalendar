@@ -20,7 +20,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXB-r3-8Pq">
-                    <rect key="frame" x="160" y="64" width="160" height="34"/>
+                    <rect key="frame" x="160" y="64" width="160" height="44"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="返程日期">
                         <color key="titleColor" red="0.0039215686269999999" green="0.62352941179999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -29,17 +30,18 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE8-hW-E0l">
-                    <rect key="frame" x="0.0" y="98" width="160" height="3"/>
+                    <rect key="frame" x="0.0" y="108" width="160" height="3"/>
                     <color key="backgroundColor" red="0.0039215686274509803" green="0.62352941176470589" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="3" id="YAf-Ny-M67"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOs-jT-CJ1">
-                    <rect key="frame" x="0.0" y="64" width="160" height="34"/>
+                    <rect key="frame" x="0.0" y="64" width="160" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="cMH-dS-dnj"/>
+                        <constraint firstAttribute="height" constant="44" id="cMH-dS-dnj"/>
                     </constraints>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="去程日期">
                         <color key="titleColor" red="0.0039215686274509803" green="0.62352941176470589" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     </state>

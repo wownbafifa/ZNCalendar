@@ -38,13 +38,18 @@
     self.clipsToBounds = YES;
     CGFloat mainWidth = [[UIScreen mainScreen]bounds].size.width;
     
+//    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 8.0f, mainWidth, 1)];
+//    [label setBackgroundColor:GCViewColor_8];
+//    [self addSubview:label];
+    
     //月份
-    UILabel *masterLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 10.0f, mainWidth, 30.f)];
+
+    UILabel *masterLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 15.0f, mainWidth, 20.f)];
     [masterLabel setBackgroundColor:[UIColor clearColor]];
     [masterLabel setTextAlignment:NSTextAlignmentCenter];
     [masterLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
     self.masterLabel = masterLabel;
-    self.masterLabel.textColor = COLOR_THEME;
+    self.masterLabel.textColor = [UIColor blackColor];
     [self addSubview:self.masterLabel];
 
     

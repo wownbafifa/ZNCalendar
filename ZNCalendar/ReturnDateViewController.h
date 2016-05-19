@@ -9,6 +9,11 @@
 
 typedef void(^travelData)(NSDictionary *);
 
+typedef NS_OPTIONS(NSUInteger, ButtonType) {
+    Plane = 1,//去程或入住button
+    Hotel = 2 //返程或离店button
+};
+
 /**
  *  往返日历控制器
  */
@@ -19,5 +24,5 @@ typedef void(^travelData)(NSDictionary *);
 @property (nonatomic,assign) BOOL isFirstDateSelected;
 
 
-- (instancetype)initWithFirstBtnStr:(NSString *)firstBtnStr andSecondBtnStr:(NSString *)secondBtnStr;
+- (instancetype)initWithFirstBtnStr:(NSString *)firstBtnStr andSecondBtnStr:(NSString *)secondBtnStr andButtonDate:(NSDate *)btnDate andButtonType:(ButtonType)type;
 @end
